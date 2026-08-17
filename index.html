@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>راهنمای جامع ارائه خدمات | روشا</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    direction:rtl;
+    background:#f4f6f5;
+    color:#263238;
+    line-height:2;
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:850px;
+    margin:auto;
+    padding:20px 16px 40px;
+}
+
+.hero-title{
+    text-align:center;
+    margin-top:20px;
+    animation:fadeIn 1.2s ease;
+}
+
+.hero-title h1{
+    font-size:2rem;
+    font-weight:700;
+    color:#18231f;
+    margin-bottom:12px;
+}
+
+.hero-title p{
+    font-size:1.15rem;
+    color:#52615b;
+}
+
+.glass-card{
+    margin:30px auto 20px;
+    width:100%;
+    max-width:520px;
+    min-height:120px;
+    border-radius:35px;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(120,220,80,0.85),
+        rgba(70,190,70,0.65)
+    );
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    box-shadow:
+    0 20px 40px rgba(50,120,50,0.18),
+    inset 0 0 30px rgba(255,255,255,0.25);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    color:white;
+    animation:fadeIn 2s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+
+.glass-card::before{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-20%;
+    width:140%;
+    height:100%;
+    background:rgba(255,255,255,0.15);
+    transform:rotate(-15deg);
+}
+
+
+.brand-small{
+    position:relative;
+    z-index:2;
+    font-size:1.35rem;
+    font-weight:500;
+}
+
+.brand-main{
+    position:relative;
+    z-index:2;
+    font-size:2rem;
+    font-weight:700;
+}
+
+
+.warning-box{
+    margin:25px 0;
+    padding:18px;
+    border-radius:22px;
+
+    background:rgba(255,245,190,0.65);
+
+    border:1px solid rgba(220,180,50,0.35);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:1rem;
+}
+
+
+.warning-icon{
+    font-size:2rem;
+    flex-shrink:0;
+}
+
+
+.section{
+    margin-top:25px;
+    background:rgba(255,255,255,0.75);
+
+    border-radius:24px;
+
+    padding:22px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+
+    backdrop-filter:blur(12px);
+}
+
+
+.section h2{
+    font-size:1.45rem;
+    color:#1f332b;
+    margin-bottom:18px;
+}
+
+
+.text-content{
+    font-size:1.08rem;
+    line-height:2.2;
+    text-align:right;
+}
+
+
+.accordion{
+    margin-top:18px;
+}
+
+
+.accordion-item{
+
+    background:rgba(255,255,255,0.85);
+
+    border-radius:20px;
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(0,0,0,0.05);
+
+}
+
+
+.accordion-title{
+
+    padding:18px;
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.accordion-title span{
+
+    color:#65b741;
+
+    font-size:1.5rem;
+
+}
+
+
+.accordion-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    padding:0 18px;
+
+    transition:max-height .45s ease,padding .45s ease;
+
+    font-size:1.05rem;
+
+    line-height:2.2;
+
+}
+
+
+.accordion-item.active .accordion-content{
+
+    max-height:1000px;
+
+    padding:0 18px 20px;
+
+}
+
+
+.support-area{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.65);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+
+.support-button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    margin:12px auto;
+
+    max-width:350px;
+
+}
+
+
+.whatsapp{
+
+    background:#25D366;
+
+}
+
+
+.eitaa{
+
+    background:#f28c28;
+
+}
+
+
+.support-label{
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+
+.slogan{
+
+    margin:35px auto 10px;
+
+    padding:15px 25px;
+
+    width:max-content;
+
+    max-width:90%;
+
+    border-radius:20px;
+
+    background:rgba(120,220,80,.18);
+
+    border:1px solid rgba(80,180,80,.3);
+
+    backdrop-filter:blur(10px);
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+}
+
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
+@media(max-width:600px){
+
+.container{
+padding:15px 12px;
+}
+
+.hero-title h1{
+font-size:1.65rem;
+}
+
+.section h2{
+font-size:1.25rem;
+}
+
+.text-content{
+font-size:1rem;
+}
+
+.glass-card{
+min-height:110px;
+}
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="hero-title">
+
+<h1>راهنمای جامع ارائه خدمات</h1>
+
+<p>شرایط و ضوابط + مراحل + ارتباط با ما</p>
+
+</section>
+
+<div class="glass-card">
+
+<div class="brand-small">
+روشا
+</div>
+  <section class="section">
+
+<h2>مقدمه</h2>
+
+<div class="text-content">
+
+<p>
+معمولاً وقتی نام «بهزیستی» به گوش می‌رسد، بیشتر مردم تصور می‌کنند که این سازمان صرفاً وظیفه حمایت از افراد دارای معلولیت جسمی را بر عهده دارد؛ در حالی که حوزه فعالیت سازمان بهزیستی بسیار گسترده‌تر از این است و طیف مختلفی از مشکلات روحی و روانی را شامل می‌شود؛ از جمله افرادی که دارای معلولیت ذهنی یا اختلالات روانی هستند و یا حتی با مشکل استرس ( اضطراب ) مواجه‌اند. در صورت احراز شرایط، این افراد می‌توانند از حقوق و مزایای مربوط به این حوزه بهره‌مند شوند.
+</p>
+
+<br>
+
+<p>
+در خصوص بیماری استرس باید توجه داشت که در حال حاضر، بخش عمده‌ای از مردم به دلیل مشکلات و گرفتاری‌های روزمره و فشارهای کاری و زندگی، با نگرانی و استرس مواجه هستند.
+</p>
+
+<br>
+
+<p>
+بنابراین، در چنین شرایطی ابتدا لازم است وضعیت فرد به‌صورت دقیق بررسی شود. اگر شرایط شما به‌گونه‌ای باشد که بتوان برای آن اقدام کرد، ما در بررسی شرایط و دریافت و تکمیل مستندات پزشکی مورد نیاز در کنار شما خواهیم بود و در این مسیر، همراهی و راهنمایی لازم را ارائه خواهیم کرد. پس از آماده شدن مدارک و طی مراحل لازم، می‌توان موضوع را از طریق سازمان بهزیستی پیگیری کرد تا در صورت احراز شرایط، امکان بهره‌مندی شما از حقوق و مزایای مربوطه فراهم شود و ما در تمامی این مراحل در کنار شما خواهیم بود.
+</p>
+
+<br>
+
+<p>
+البته توضیحاتی که خدمت شما عرض کردم، صرفاً شرحی ساده و مختصر از این موضوع است و این فرایند دارای جزئیات و مراحل مختلف و پیچیدگی‌های خاص خود است. همکاران ما تلاش می‌کنند تا در تمامی مراحل، روند کار را برای شما تسهیل کرده و برای بهره‌مندی از حقوق و مزایای مربوطه، همراهی و راهنمایی لازم را ارائه دهند.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="accordion">
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+بهزیستی دقیقاً چه مقدار مستمری پرداخت می‌کند؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+مبلغ مستمری برای همه افراد یکسان نیست و با توجه به شرایط و وضعیت هر فرد تعیین می‌شود.
+
+<br><br>
+
+با این حال، بر اساس نرخ سال جاری، معمولاً مبلغی حدود ۲۵ تا ۳۰ میلیون تومان در ماه مطرح است و ممکن است با توجه به تورم سالانه افزایش یابد.
+
+<br><br>
+
+علاوه بر مستمری برخی خدمات مشاوره‌ای، عیدی و مزایای دیگر نیز شامل فرد شود.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+شاید اصلاً مستمری حقوق شامل من نشود!
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+کاملاً طبیعی است که چنین دغدغه‌ای داشته باشید.
+
+<br><br>
+
+اضطراب و استرس امروزه بخشی از زندگی همه افراد است و ممکن است بسیاری از افراد را مشمول حمایت‌های مربوطه کند.
+
+<br><br>
+
+ما در این مسیر، شما را در تکمیل مدارک و تشکیل پرونده‌ای واقعی، کامل و مطابق قوانین همراهی می‌کنیم و با پیگیری روند کار را برای شما ساده‌تر و شفاف‌تر کنیم تا در صورت احراز شرایط، امکان بهره‌مندی از حمایت‌های مربوطه فراهم شود.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+آیا مطمئن هستید که من هم می‌توانم از این حقوق و مزایا بهره‌مند شوم؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+پاسخ دقیق به این پرسش، تنها پس از بررسی کامل شرایط شما امکان‌پذیر است.
+
+<br><br>
+
+پس از بررسی شرایط شما، به‌صورت شفاف اعلام می‌کنیم که آیا امکان ادامه این مسیر برای شما وجود دارد یا خیر.
+
+<br><br>
+
+نکته مهم این است که بررسی اولیه شرایط شما هیچ‌گونه هزینه‌ای ندارد و پس از آن، در صورت احراز شرایط، امکان اقدام برای بهره‌مندی از حقوق و مزایای مربوطه برای شما مشخص خواهد شد.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+بررسی شرایط من به چه نحوی انجام می‌شود؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+پس از آنکه مطالب این صفحه را به‌صورت کامل مطالعه نمودید، در انتهای صفحه وارد بخش پشتیبانی در واتساپ یا ایتا خواهید شد.
+
+<br><br>
+
+در آن بخش، آمادگی خود را برای بررسی کامل شرایط‌تان به همکاران ما اعلام می‌نمایید تا مراحل بررسی به‌صورت دقیق آغاز شود.
+
+</div>
+
+</div>
+
+
+</div>
+
+<div class="brand-main">
+مسیر حمایت
+</div>
+
+</div>
+
+<div class="warning-box">
+
+<div class="warning-icon">⚠️</div>
+
+<div>
+لطفا تمامی مطالب درج شده را با دقت مطالعه نمایید
+</div>
+
+</div>
+<div class="accordion">
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+سایر مراحل را شرح دهید
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+پس از بررسی اولیه شرایط، سایر مراحل کار به شرح زیر انجام می‌شود:
+
+<br><br>
+
+الف) تنظیم و امضای قرارداد
+
+<br>
+ب) ارسال مدارک
+
+<br>
+ج) تشکیل پرونده
+
+<br>
+د) پیگیری اداری
+
+<br>
+هـ) اعلام نتیجه نهایی
+
+<br><br>
+
+در تمامی این مراحل، کارگروه در کنار شما خواهد بود
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+خدمات شما چقدر هزینه دارد و نحوه پرداخت چگونه است؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+هزینه خدمات این مسیر ۷۵ میلیون تومان است.
+
+<br><br>
+
+شما می‌توانید کل مبلغ را در ابتدای کار، به‌صورت حضوری و در قالب یک قرارداد رسمی و قانونی پرداخت نمایید.
+
+<br><br>
+
+چنانچه امکان پرداخت کامل هزینه در ابتدای مسیر برای شما وجود نداشته باشد، این امکان برای شما در نظر گرفته شده است که پس از دریافت مستمری، مبلغ را در سه قسط و طی سه ماه نخست، از محل دریافتی خود پرداخت نمایید.
+
+<br><br>
+
+لازم به ذکر است در صورت عدم پرداخت هزینه خدمات در سه ماه نخست پس از دریافت مستمری، روند پیگیری ها متوقف و پرونده از ادامه فرایند خارج و ابطال خواهد شد.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+متقاضی چه وظایفی دارد؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+وظایف متقاضی در این مسیر به شرح زیر است:
+
+<br><br>
+
+· امضای قرارداد همکاری
+
+<br>
+· تکمیل و ارسال مدارک مورد نیاز
+
+<br>
+· مراجعه حضوری برای پرداخت، در صورت لزوم
+
+<br>
+· مراجعه حضوری به سازمان بهزیستی، معمولاً حدود ۱ تا ۲ مرتبه
+
+<br><br>
+
+لازم است توجه داشته باشید که مراجعه حضوری به سازمان بهزیستی باید در یکی از شهرستان‌های استان تهران و در منطقه مربوط به پرونده انجام شود.
+
+<br><br>
+
+زمان و محل دقیق مراجعه، از قبل به شما اطلاع‌رسانی خواهد شد و هماهنگی و راهنمایی لازم در این زمینه صورت می‌گیرد.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+مدت زمان انجام این فرایند چقدر است؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+زمان بر اساس تجارب قبلی معمولاً بین ۸ تا ۱۲ ماه است.
+
+<br><br>
+
+طولانی بودن این فرایند به عواملی مانند موارد زیر بستگی دارد:
+
+<br><br>
+
+الف) تکمیل و آماده‌سازی پرونده متقاضی به‌صورت کامل و دقیق
+
+<br>
+ب) وجود متقاضیان قبلی در نوبت بررسی
+
+<br>
+ج) زمان‌بر بودن فرایند بررسی و تأیید نهایی در سازمان بهزیستی
+
+<br><br>
+
+بنابراین، در این مسیر نیاز به صبر و همراهی شما عزیزان وجود دارد.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+آیا ثبت داشتن استرس برای من مشکلی ایجاد می‌کند؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+گواهی مربوط به استرس، موقت است و به‌تنهایی به معنای وجود اختلال جدی روانی نیست و صرفاً برای بررسی شرایط و بهره‌مندی از حمایت‌های مربوطه ارائه می‌شود.
+
+<br><br>
+
+حریم خصوصی شما برای ما و سازمان بهزیستی اهمیت ویژه‌ای دارد و تمامی اطلاعات و شما در تمام مراحل محرمانه باقی خواهد ماند و به دلیل ماهیت متفاوت و قابل درمان بودن مانند محجوریت و یا جنون در سوابق افراد ذخیره نمیشود
+
+</div>
+
+</div>
+
+
+</div>
+<div class="accordion">
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+شما چه مجموعه‌ای هستید؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+ما یک کارگروه مستقل هستیم که در زمینه مشاوره، راهنمایی و پیگیری مراحل دریافت حمایت‌های قانونی، در کنار شما فعالیت می‌کنیم.
+
+<br><br>
+
+لازم به توضیح است که ما هیچ‌گونه وابستگی یا رابطه سازمانی با سازمان بهزیستی یا سایر نهادهای دولتی نداریم و به‌صورت مستقل فعالیت می‌کنیم.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+آیا فعالیت‌های شما کاملاً قانونی است؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+بله. تمامی مراحل فعالیت ما در چارچوب قوانین کشور و ضوابط مربوط به سازمان بهزیستی انجام می‌شود و در هیچ مرحله‌ای از روش‌های غیرقانونی استفاده نخواهد شد.
+
+<br><br>
+
+برای مثال، چنانچه ارائه گواهی پزشکی برای پرونده شما ضروری باشد، این گواهی باید توسط پزشک متخصص صادر شده، واقعی و قابل استعلام باشد.
+
+<br><br>
+
+از آنجا که پرونده‌ها ممکن است در مراحل مختلف مورد بررسی قرار گیرند، تمامی مدارک و اقدامات با دقت و مطابق ضوابط انجام می‌شود.
+
+<br><br>
+
+پایبندی به قانون برای ما یک اصل اساسی است و هیچ اقدامی که موجب ایجاد اشکال قانونی در روند پرونده شود، مورد پذیرش نخواهد بود.
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+راه‌های ارتباطی با شما چیست؟
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+در صورت تمایل به شروع همکاری، ارتباط از طریق پیام‌رسان واتساپ یا ایتا انجام خواهد شد.
+
+<br><br>
+
+شماره تماس اکنون در اختیار شما قرار خواهد شد و پس از آغاز فرایند، آدرس و سایر اطلاعات مورد نیاز نیز برای شما ارسال خواهد شد. در صورت لزوم، امکان مراجعه حضوری نیز وجود دارد.
+
+<br><br>
+
+
+<div class="warning-box">
+
+<div class="warning-icon">⚠️</div>
+
+<div>
+
+توجه:
+
+<br><br>
+
+بخش بعدی، مهم‌ترین بخش این راهنماست و نحوه تعامل و همکاری با ما را به‌طور کامل توضیح می‌دهد. لطفاً پیش از ورود به مرحله بعد، این بخش را با دقت مطالعه فرمایید.
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<div class="accordion-title">
+دستورالعمل همکاری و نحوه ارتباط با ما
+<span>+</span>
+</div>
+
+<div class="accordion-content">
+
+
+این بخش، مهم‌ است. خواهشمندیم پیش از شروع ارتباط، تمامی موارد زیر را با دقت مطالعه فرمایید.
+
+<br><br>
+
+
+<div class="green-list">
+
+
+<p>🟢 لطفاً برای پیگیری امور، تنها از یکی از دو پیام‌رسان واتساپ یا ایتا استفاده نمایید و از ارسال پیام در هر دو پیام‌رسان خودداری فرمایید.</p>
+
+<br>
+
+<p>🟢 تماس تلفنی با ما بلامانع است؛ اما خواهشمندیم تنها در موارد ضروری و با هماهنگی قبلی در پیام رسانها تماس بگیرید. پیش از هر تماس، لازم است سوابق و آخرین وضعیت پرونده شما بررسی شود تا بتوانیم با آگاهی و دقت پاسخ‌گو باشیم.</p>
+
+<br>
+
+<p>🟢 در صورتی که همکاران ما با شما تماس گرفتند و موفق به پاسخ‌گویی نشدید، لطفاً از تماس‌های مکرر با همان شماره خودداری فرمایید.</p>
+
+<br>
+
+<p>🟢 پرسش‌ها و نکات خود را حتی‌الامکان به‌صورت پیام متنی ارسال نمایید. گفت‌وگوی متنی در پیام‌رسان باقی می‌ماند و امکان بررسی و پیگیری دقیق‌تر آن وجود خواهد داشت.</p>
+
+<br>
+
+<p>🟢 پاسخ‌گویی به درخواست‌ها ممکن است به دلیل حجم بالای امور و شرایط اجرایی، با تأخیر انجام شود؛ اما درخواست شما بدون پاسخ نخواهد ماند. بنابراین، در صورت عدم دریافت پاسخ فوری، لطفاً شکیبا باشید و از ارسال مجدد یا تکرار پرسش خودداری فرمایید.</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+<div class="green-list">
+
+<p>🟢 از طرح پرسش‌هایی که پاسخ آن‌ها پیش‌تر در همین راهنما ارائه شده است، خودداری فرمایید تا زمان و تمرکز مجموعه صرف پیگیری امور پرونده‌ها شود.</p>
+
+<br>
+
+<p>🟢 لطفاً از ارسال ویس‌های طولانی خودداری نمایید. تا حد امکان، پیام‌های خود را کوتاه، واضح و متنی ارسال کنید؛ مگر آنکه ارسال ویس برای توضیح موضوعی ضروری باشد.</p>
+
+<br>
+
+<p>🟢 در این فرایند، وظایف شما بسیار محدود است و نیازی به پیگیری روزانه، هفتگی یا حتی ماهانه وجود ندارد. هرگاه پرونده شما وارد مرحله جدیدی شود یا نیاز به اقدام خاصی وجود داشته باشد، موضوع از طریق پیام‌رسان انتخابی شما اطلاع‌رسانی خواهد شد.</p>
+
+<br>
+
+<p>🟢 در صورتی که پس از بررسی شرایط، ادامه همکاری با شما قطعی شود، آدرس و سایر اطلاعات مورد نیاز برای ادامه فرایند از طریق پیام‌رسان در اختیارتان قرار خواهد گرفت.</p>
+
+<br>
+
+<p>🟢 در تمام طول فرایند، صبر و همراهی شما اهمیت زیادی دارد. زمان‌بندی هر مرحله به شما اطلاع داده خواهد شد و در صورت ایجاد هرگونه تغییر یا نیاز به اقدام از سوی شما، موضوع را به اطلاع‌تان خواهیم رساند.</p>
+
+<br>
+
+<p>🟢 پس از آغاز گفتگو از طریق دکمه پشتیبانی و انتخاب واتساپ یا ایتا، لطفاً ادامه ارتباط خود را تنها در همان پیام‌رسان دنبال کنید و از ادامه گفتگوهای پراکنده در اینستاگرام یا سایر پیام‌رسان‌ها خودداری فرمایید. یکپارچگی گفتگوها و سوابق، برای پیگیری دقیق امور شما اهمیت زیادی دارد.</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="warning-box">
+
+<div class="warning-icon">⚠️</div>
+
+<div>
+
+چنانچه تمامی مطالب این راهنما را به‌طور کامل مطالعه کرده‌اید و برای ادامه مسیر آماده هستید، می‌توانید از یکی از گزینه‌های پشتیبانی زیر استفاده نمایید.
+
+</div>
+
+</div>
+
+
+<div class="support-area">
+
+
+<a class="support-button whatsapp"
+href="https://wa.me/989304047332?text=سلام%20وقت%20بخیر%0Aتمامی%20مطالبی%20که%20در%20بخش%20راهنما%20ارائه%20نمودید%20با%20دقت%20مطالعه%20کردم%20و%20آماده‌ام%20تا%20بررسی%20شرایط%20من%20را%20انجام%20دهید."
+target="_blank">
+
+پشتیبانی
+
+</a>
+
+<div class="support-label">
+واتساپ
+</div>
+
+
+
+<a class="support-button eitaa"
+href="https://eitaa.com/RoshaSupportt"
+target="_blank">
+
+پشتیبانی
+
+</a>
+
+<div class="support-label">
+ایتا
+</div>
+
+
+</div>
+
+
+
+<div class="slogan">
+
+پیگیری، شفافیت، تعهد
+
+</div>
+
+
+</div>
+
+
+<script>
+
+const accordionTitles=document.querySelectorAll(".accordion-title");
+
+accordionTitles.forEach(title=>{
+
+title.addEventListener("click",()=>{
+
+const item=title.parentElement;
+
+item.classList.toggle("active");
+
+const icon=title.querySelector("span");
+
+if(item.classList.contains("active")){
+icon.textContent="−";
+}
+else{
+icon.textContent="+";
+}
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>
