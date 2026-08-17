@@ -4,381 +4,267 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مسیر حمایت</title>
+<title>ورود</title>
 
 <style>
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
 }
 
 html,
-body{
-    width:100%;
-    height:100%;
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
-body{
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
     font-family:
         Tahoma,
         Arial,
         sans-serif;
 
-    background-image:url("background.png");
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
-
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    overflow:hidden;
+    overflow: hidden;
 }
 
+/* کل صفحه */
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
 
-/* کل محتوای صفحه */
+    position: relative;
 
-.login-page{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-    width:100%;
-    min-height:100vh;
+    flex-direction: column;
 
-    position:relative;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-    padding-top:22vh;
+    padding-top: 2cm;
 }
-
 
 /* عنوان */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.title-area{
+    gap: 8px;
 
-    position:relative;
+    color: #243b2b;
 
-    width:90%;
-    max-width:430px;
-
-    text-align:center;
-
-    margin-bottom:35px;
-}
-
-
-/* تزئینات بسیار ظریف اطراف عنوان */
-
-.title-area::before{
-
-    content:"🌿";
-
-    position:absolute;
-
-    right:4%;
-    top:5px;
-
-    font-size:28px;
-
-    opacity:.75;
-
-    transform:rotate(-15deg);
-}
-
-
-.title-area::after{
-
-    content:"🌿";
-
-    position:absolute;
-
-    left:4%;
-    bottom:0;
-
-    font-size:28px;
-
-    opacity:.75;
-
-    transform:scaleX(-1) rotate(-15deg);
-}
-
-
-/* عنوان اصلی */
-
-.title{
-
-    display:inline-block;
-
-    color:#263b2d;
-
-    font-size:clamp(28px,7vw,42px);
-
-    font-weight:700;
-
-    line-height:1.5;
+    font-size: 30px;
+    font-weight: 700;
 
     text-shadow:
-        0 1px 2px rgba(255,255,255,.9),
-        0 2px 5px rgba(255,255,255,.7);
+        0 1px 3px rgba(255,255,255,.8);
 
-    position:relative;
+    margin: 0 0 18px 0;
 }
 
+/* جوانه کنار عنوان */
+.title-sprout {
+    font-size: 27px;
+    line-height: 1;
+}
 
 /* بخش ورود */
+.login-box {
+    width: min(82%, 340px);
 
-.login-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    width:72%;
+    background: transparent;
 
-    max-width:310px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
+    padding: 0;
+    margin: 0;
 }
-
 
 /* متن درخواست رمز */
+.login-text {
+    width: 100%;
 
-.password-label{
+    text-align: center;
 
-    color:#111;
+    color: #111;
 
-    font-size:clamp(18px,5vw,23px);
+    font-size: 21px;
+    font-weight: 600;
 
-    font-weight:600;
+    line-height: 1.8;
 
-    line-height:1.7;
+    margin-bottom: 13px;
 
-    margin-bottom:14px;
+    padding: 5px 12px;
 
-    text-align:center;
+    /*
+      فقط یک لایه خیلی ظریف برای خوانایی متن،
+      بدون کادر بزرگ دور فرم
+    */
+    background: rgba(255,255,255,.28);
 
-    text-shadow:
-        0 1px 3px rgba(255,255,255,.95),
-        0 0 8px rgba(255,255,255,.85);
-
+    border-radius: 12px;
 }
-
 
 /* قسمت رمز */
+.password-wrapper {
+    width: 100%;
 
-.password-wrapper{
+    position: relative;
 
-    width:100%;
-
-    position:relative;
-
+    margin-bottom: 14px;
 }
-
 
 /* کادر رمز */
+#password {
+    width: 100%;
+    height: 58px;
 
-#password{
+    padding: 0 52px 0 18px;
 
-    width:100%;
+    border: 1px solid rgba(50,70,45,.25);
 
-    height:58px;
+    border-radius: 16px;
 
-    border-radius:17px;
+    background: rgba(255,255,255,.90);
 
-    border:1px solid rgba(255,255,255,.9);
+    color: #222;
 
-    background:rgba(255,255,255,.88);
+    font-size: 22px;
 
-    color:#222;
+    text-align: center;
 
-    font-size:22px;
-
-    text-align:center;
-
-    direction:ltr;
-
-    outline:none;
-
-    padding:0 52px 0 18px;
+    outline: none;
 
     box-shadow:
-        0 4px 15px rgba(0,0,0,.15);
-
-    transition:.2s ease;
+        0 3px 12px rgba(0,0,0,.12);
 }
 
-
-#password:focus{
-
-    background:rgba(255,255,255,.96);
-
-    border-color:#6f855f;
+/* وقتی داخل کادر کلیک می‌شود */
+#password:focus {
+    border-color: rgba(91,115,77,.75);
 
     box-shadow:
-        0 4px 18px rgba(0,0,0,.20);
+        0 0 0 3px rgba(91,115,77,.15),
+        0 3px 12px rgba(0,0,0,.12);
 }
 
+/* چشم */
+.eye-button {
+    position: absolute;
 
-/* دکمه چشم */
+    right: 12px;
+    top: 50%;
 
-.toggle-password{
+    transform: translateY(-50%);
 
-    position:absolute;
+    width: 34px;
+    height: 34px;
 
-    right:10px;
+    border: none;
 
-    top:50%;
+    background: transparent;
 
-    transform:translateY(-50%);
+    color: #53694b;
 
-    width:38px;
+    font-size: 20px;
 
-    height:38px;
+    cursor: pointer;
 
-    border:none;
+    padding: 0;
 
-    background:transparent;
-
-    color:#56664d;
-
-    cursor:pointer;
-
-    font-size:21px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 /* دکمه ورود */
+.login-button {
+    width: 100%;
+    height: 58px;
 
-.login-button{
+    border: none;
 
-    width:100%;
+    border-radius: 16px;
 
-    height:58px;
+    background: #71865f;
 
-    margin-top:14px;
+    color: white;
 
-    border:none;
+    font-size: 24px;
+    font-weight: 700;
 
-    border-radius:17px;
-
-    background:#6f855f;
-
-    color:white;
-
-    font-size:22px;
-
-    font-weight:bold;
-
-    font-family:inherit;
-
-    cursor:pointer;
+    cursor: pointer;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,.18);
+        0 4px 12px rgba(0,0,0,.16);
 
     transition:
         transform .15s ease,
-        background .2s ease;
+        background .15s ease;
 }
 
-
-.login-button:hover{
-
-    background:#637953;
+/* حالت لمس */
+.login-button:active {
+    transform: scale(.98);
 }
-
-
-.login-button:active{
-
-    transform:scale(.98);
-}
-
 
 /* پیام خطا */
+.error-message {
+    min-height: 28px;
 
-.error-message{
+    margin-top: 10px;
 
-    min-height:28px;
+    color: #8b2222;
 
-    margin-top:12px;
+    font-size: 16px;
+    font-weight: 600;
 
-    color:#8b2020;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    text-align:center;
+    text-align: center;
 
     text-shadow:
-        0 1px 3px white;
-
+        0 1px 3px rgba(255,255,255,.9);
 }
 
 
-/* مخصوص موبایل‌های خیلی کوچک */
+/* مخصوص صفحه‌های خیلی کوچک */
+@media (max-height: 700px) {
 
-@media(max-height:700px){
-
-    .login-page{
-
-        padding-top:15vh;
+    .login-page {
+        padding-top: 1.5cm;
     }
 
-    .title-area{
+    .title {
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
 
-        margin-bottom:25px;
+    .login-text {
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
     #password,
-    .login-button{
-
-        height:52px;
+    .login-button {
+        height: 52px;
     }
 
-}
-
-
-/* موبایل‌های خیلی باریک */
-
-@media(max-width:360px){
-
-    .login-box{
-
-        width:76%;
+    .login-button {
+        font-size: 22px;
     }
-
-    .title{
-
-        font-size:29px;
-    }
-
-    .password-label{
-
-        font-size:18px;
-    }
-
-}
-
-
-/* جلوگیری از انتخاب ناخواسته دکمه */
-
-button{
-
-    -webkit-tap-highlight-color:transparent;
 }
 
 </style>
@@ -389,39 +275,36 @@ button{
 
 <div class="login-page">
 
-
-    <div class="title-area">
-
-        <div class="title">
-            مسیر حمایت
-        </div>
-
+    <div class="title">
+        <span>مسیر حمایت</span>
+        <span class="title-sprout">🌱</span>
     </div>
 
 
     <div class="login-box">
 
-
-        <div class="password-label">
-            لطفاً پسورد را وارد کنید
+        <div class="login-text">
+            لطفاً رمز را وارد کنید
         </div>
 
 
         <div class="password-wrapper">
 
             <input
-                id="password"
                 type="password"
+                id="password"
+                placeholder=""
+                maxlength="6"
+                minlength="5"
                 autocomplete="off"
                 inputmode="text"
-                aria-label="پسورد"
             >
 
             <button
                 type="button"
-                class="toggle-password"
-                id="togglePassword"
-                aria-label="نمایش پسورد"
+                class="eye-button"
+                id="eyeButton"
+                aria-label="نمایش رمز"
             >
                 👁
             </button>
@@ -432,17 +315,16 @@ button{
         <button
             type="button"
             class="login-button"
-            id="loginButton"
+            onclick="checkPassword()"
         >
             ورود
         </button>
 
 
         <div
-            class="error-message"
             id="errorMessage"
+            class="error-message"
         ></div>
-
 
     </div>
 
@@ -451,118 +333,135 @@ button{
 
 <script>
 
-/* ==================================================
-   فقط این قسمت را برای تغییر رمز عوض کن
-   ================================================== */
+/*
+==================================================
+رمز ورود را فقط از این خط تغییر بده
+==================================================
 
-const PASSWORD = "123456";
+مثلاً:
+
+const correctPassword = "Ab123";
+
+برای تغییر هفتگی یا ماهانه،
+فقط متن داخل کوتیشن را عوض کن.
+
+حروف بزرگ و کوچک مهم نیستند.
+مثلاً Ab123 و ab123 و AB123 یکسان هستند.
+اما خود حروف و اعداد باید همان باشند.
+*/
+
+const correctPassword = "12345";
 
 
-/* آدرس سایت اصلی */
+/*
+==================================================
+آدرس سایت اصلی
+==================================================
+*/
 
-const MAIN_SITE =
+const mainSite =
     "https://roshasupport.github.io/Rosha.github.io/";
 
 
-/* عناصر صفحه */
+/*
+==================================================
+بررسی رمز
+==================================================
+*/
 
-const passwordInput =
-    document.getElementById("password");
+function checkPassword() {
 
-const loginButton =
-    document.getElementById("loginButton");
+    const passwordInput =
+        document.getElementById("password");
 
-const errorMessage =
-    document.getElementById("errorMessage");
+    const errorMessage =
+        document.getElementById("errorMessage");
 
-const togglePassword =
-    document.getElementById("togglePassword");
-
-
-/* نمایش / مخفی کردن رمز */
-
-togglePassword.addEventListener(
-    "click",
-    function(){
-
-        if(passwordInput.type === "password"){
-
-            passwordInput.type = "text";
-
-            togglePassword.textContent = "🙈";
-
-            togglePassword.setAttribute(
-                "aria-label",
-                "مخفی کردن پسورد"
-            );
-
-        }else{
-
-            passwordInput.type = "password";
-
-            togglePassword.textContent = "👁";
-
-            togglePassword.setAttribute(
-                "aria-label",
-                "نمایش پسورد"
-            );
-
-        }
-
-    }
-);
-
-
-/* ورود */
-
-function login(){
 
     const enteredPassword =
         passwordInput.value.trim();
 
+
     /*
-       مقایسه بدون حساسیت به حروف بزرگ و کوچک
-       اما خود کاراکترها باید همان کاراکترهای رمز باشند.
+      تبدیل هر دو رمز به حروف کوچک
+      باعث می‌شود بزرگ یا کوچک بودن حروف
+      تفاوتی نداشته باشد.
     */
 
-    if(
+    if (
         enteredPassword.toLowerCase() ===
-        PASSWORD.toLowerCase()
-    ){
+        correctPassword.toLowerCase()
+    ) {
 
         errorMessage.textContent = "";
 
-        window.location.href = MAIN_SITE;
+        window.location.href = mainSite;
 
-    }else{
+    } else {
 
         errorMessage.textContent =
-            "پسورد صحیح نیست.";
+            "رمز واردشده صحیح نیست.";
+
+        passwordInput.value = "";
 
         passwordInput.focus();
-
     }
-
 }
 
 
-/* کلیک روی ورود */
+/*
+==================================================
+نمایش / مخفی کردن رمز
+==================================================
+*/
 
-loginButton.addEventListener(
-    "click",
-    login
-);
+const eyeButton =
+    document.getElementById("eyeButton");
+
+const passwordInput =
+    document.getElementById("password");
 
 
-/* امکان زدن Enter */
+eyeButton.addEventListener("click", function () {
+
+    if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+
+        eyeButton.textContent = "🙈";
+
+        eyeButton.setAttribute(
+            "aria-label",
+            "مخفی کردن رمز"
+        );
+
+    } else {
+
+        passwordInput.type = "password";
+
+        eyeButton.textContent = "👁";
+
+        eyeButton.setAttribute(
+            "aria-label",
+            "نمایش رمز"
+        );
+    }
+});
+
+
+/*
+==================================================
+امکان ورود با زدن Enter
+==================================================
+*/
 
 passwordInput.addEventListener(
     "keydown",
-    function(event){
+    function(event) {
 
-        if(event.key === "Enter"){
+        if (event.key === "Enter") {
 
-            login();
+            checkPassword();
 
         }
 
